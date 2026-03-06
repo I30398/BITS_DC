@@ -5,12 +5,13 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-SERVER1_HOST = config['SERVER1']['HOST']
-SERVER1_PORT = int(config['SERVER1']['PORT'])
+SERVER1_HOST = config['SERVER1']['SERVER1_HOST']
+SERVER1_PORT = int(config['SERVER1']['SERVER1_PORT'])
 
 # SERVER1_HOST = '10.241.77.221'
 # SERVER1_PORT = 9001
-
+print("SERVER1_HOST:", SERVER1_HOST)
+print("SERVER1_PORT:", SERVER1_PORT)
 
 def receive_file_until_eof(sock, filename):
     with open(filename, 'wb') as f:

@@ -11,6 +11,8 @@ config.read('config.ini')
 
 FILES_DIR = config['FILES_DIR']['SERVER2']
 
+print("FILES_DIR:", FILES_DIR)
+
 def send_file(conn, filepath):
     if not os.path.exists(filepath):
         conn.sendall(b'NOT_FOUND')

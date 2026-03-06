@@ -1,12 +1,21 @@
 # server1.py
 import socket
 import os
+import configparser
 
 HOST = '0.0.0.0'
 PORT = 9001
-SERVER2_HOST = '10.241.77.209'
-SERVER2_PORT = 9002
-FILES_DIR = './server1/'
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+SERVER2_HOST = config['SERVER2']['SERVER2_HOST']
+SERVER2_PORT = int(config['SERVER2']['SERVER2_PORT'])
+
+FILES_DIR = config['FILES_DIR']['SERVER1']
+
+print("SERVER2_HOST:", SERVER2_HOST)
+print("SERVER2_PORT:", SERVER2_PORT)
+print("FILES_DIR:", FILES_DIR)
 
 def receive_file(sock, temp_filename):
     status = sock.recv(6)
