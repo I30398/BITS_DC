@@ -13,6 +13,10 @@ FILES_DIR = config['FILES_DIR']['SERVER2']
 
 print("FILES_DIR:", FILES_DIR)
 
+if not os.path.exists(FILES_DIR):
+    print(f"Directory {FILES_DIR} does not exist. Exiting.")
+    exit(1)
+
 def send_file(conn, filepath):
     if not os.path.exists(filepath):
         conn.sendall(b'NOT_FOUND')

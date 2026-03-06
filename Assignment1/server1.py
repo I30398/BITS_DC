@@ -17,6 +17,10 @@ print("SERVER2_HOST:", SERVER2_HOST)
 print("SERVER2_PORT:", SERVER2_PORT)
 print("FILES_DIR:", FILES_DIR)
 
+if not os.path.exists(FILES_DIR):
+    print(f"Directory {FILES_DIR} does not exist. Exiting.")
+    exit(1)
+    
 def receive_file(sock, temp_filename):
     status = sock.recv(6)
     if status == b'NOT_FO':
