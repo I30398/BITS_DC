@@ -50,8 +50,11 @@ Example structure:
 project/
 │
 ├── client.py
+
 ├── server1.py
+
 ├── server2.py
+
 ├── config.ini
 │
 ├── server1/
