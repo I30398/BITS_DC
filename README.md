@@ -1,4 +1,4 @@
-# How to Run the Distributed File System
+# How to Run the Distributed File System Application
 
 Follow the steps below to start the client and servers.
 
