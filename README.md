@@ -49,6 +49,7 @@ Place test files in these folders as needed.
 Example structure:
 project/
 │
+
 ├── client.py
 
 ├── server1.py
@@ -56,11 +57,16 @@ project/
 ├── server2.py
 
 ├── config.ini
+
 │
+
 ├── server1/
+
 │ └── example.txt
+
 │
 └── server2/
+
 └── example.txt
 
 
