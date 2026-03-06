@@ -9,9 +9,17 @@ Follow the steps below to start the client and servers.
 Edit the **config.ini** file and ensure the correct storage directories are set.
 
 Example:
-[storage]
-server1_dir = files1
-server2_dir = files2
+[SERVER1]
+SERVER1_HOST = 10.241.77.221
+SERVER1_PORT = 9001
+
+[SERVER2]
+SERVER2_HOST = 10.241.77.209
+SERVER2_PORT = 9002
+
+[FILES_DIR]
+SERVER1 = ./server1/
+SERVER2 = ./server2/
 
 
 These directories will store the files used by each server.
@@ -23,14 +31,14 @@ These directories will store the files used by each server.
 Create the directories specified in **config.ini**.
 
 Example:
-files1/
-files2/
+server1/
+server2/
 
 
 Place test files in these folders as needed.
 
-- `files1/` → files for **Server1**
-- `files2/` → files for **Server2**
+- `server1/` → files for **Server1**
+- `server2/` → files for **Server2**
 
 Example structure:
 project/
@@ -40,10 +48,10 @@ project/
 ├── server2.py
 ├── config.ini
 │
-├── files1/
+├── server1/
 │ └── example.txt
 │
-└── files2/
+└── server2/
 └── example.txt
 
 
@@ -94,8 +102,8 @@ The client will:
 Place test files in the directories specified in **config.ini**.
 
 Example:
-files1/test.txt
-files2/test.txt
+server1/test_1
+server2/test_1
 
 
 Possible cases:
@@ -103,8 +111,8 @@ Possible cases:
 | Case | Result |
 |-----|------|
 | File exists in both folders and same | Client downloads one file |
-| File exists only in files1 | Client downloads Server1 file |
-| File exists only in files2 | Client downloads Server2 file |
+| File exists only in server1 | Client downloads Server1 file |
+| File exists only in server2 | Client downloads Server2 file |
 | File exists in both but different | Client downloads both versions |
 
 ---
