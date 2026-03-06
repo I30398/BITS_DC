@@ -10,14 +10,17 @@ Edit the **config.ini** file and ensure the correct storage directories are set.
 
 Example:
 [SERVER1]
+
 SERVER1_HOST = 10.241.77.221
 SERVER1_PORT = 9001
 
 [SERVER2]
+
 SERVER2_HOST = 10.241.77.209
 SERVER2_PORT = 9002
 
 [FILES_DIR]
+
 SERVER1 = ./server1/
 SERVER2 = ./server2/
 
